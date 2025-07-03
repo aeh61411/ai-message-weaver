@@ -3,69 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Message Weaver</title>
+    <title>AI Message Helper</title>
+    <!-- Keep the cool fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="container">
+        <!-- Text Change: More direct and simple -->
         <header>
-            <h1>AI Message Weaver ⚡</h1>
-            <p>Craft the perfect message from the future.</p>
+            <h1>AI Message Helper</h1>
+            <p>Get the perfect message, written for you in seconds.</p>
         </header>
 
         <main>
             <form id="ai-form">
                 <div class="form-group">
-                    <label for="message-type">1. Select Mission Profile:</label>
+                    <!-- Text Change: Clearer label -->
+                    <label for="message-type">1. What is this message for?</label>
                     <select id="message-type" name="message-type">
-                        <option value="complain">Complaint Protocol</option>
-                        <option value="refund">Asset Recovery Request</option>
-                        <option value="job-inquiry">Career Opportunity Scan</option>
-                        <option value="apology">Diplomatic Apology</option>
+                        <!-- Text Change: Simple options -->
+                        <option value="complain">Complain about a product</option>
+                        <option value="refund">Ask for a refund</option>
+                        <option value="job-inquiry">Ask about a job</option>
+                        <option value="apology">Write an apology</option>
+                        <option value="thank-you">Write a thank-you note</option> <!-- New Option! -->
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="details">2. Input Key Datapoints:</label>
-                    <textarea id="details" name="details" placeholder="e.g., Product: 'Cybernetic Mouse', Order: 987-XYZ, Issue: Arrived with a cracked chassis."></textarea>
+                    <!-- Text Change: Simpler prompt -->
+                    <label for="details">2. Add a few key details:</label>
+                    <textarea id="details" name="details" placeholder="e.g., I ordered a 'blue t-shirt' and it arrived damaged. My order number is 12345."></textarea>
                 </div>
                 
                 <div class="form-group">
-                    <label for="tone">3. Set Communication Tone:</label>
+                    <!-- Text Change: Simpler label -->
+                    <label for="tone">3. Choose the tone:</label>
                     <select id="tone" name="tone">
                         <option value="polite">Polite</option>
-                        <option value="firm">Firm & Direct</option>
+                        <option value="firm">Firm</option>
                         <option value="friendly">Friendly</option>
-                        <option value="formal">Formal & Official</option>
+                        <option value="formal">Formal</option>
                     </select>
                 </div>
 
-                <button type="submit" id="generate-btn">ENGAGE AI</button>
+                <!-- Text Change: Clearer button text -->
+                <button type="submit" id="generate-btn">Generate Message</button>
             </form>
 
             <div id="result-container">
-                <h2>Transmission Received:</h2>
-                <div id="loading" class="hidden">CALCULATING RESPONSE... STAND BY...</div>
+                <!-- New Header Layout with Copy Button -->
+                <div class="result-header">
+                    <h2>Your Generated Message:</h2>
+                    <button id="copy-btn" title="Copy to clipboard">
+                        <!-- SVG Icon for the copy button -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zM-1 1.5A1.5 1.5 0 0 1 .5 0h3a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 3.5 4h-3A1.5 1.5 0 0 1-1 2.5v-1z"/>
+                        </svg>
+                        <span>Copy</span>
+                    </button>
+                </div>
+                <!-- Text Change: Simpler loading text -->
+                <div id="loading" class="hidden">Generating...</div>
                 <div id="result-text"></div>
             </div>
         </main>
         
         <footer>
             <div class="tip-jar">
-                <h3>Support the Uplink</h3>
-                <p>If this tool aided your mission, consider a small contribution to keep the signal strong and improving this wonderful application.</p>
-                <p><strong>LTC Network Address:</strong></p>
+                <!-- Text Change: Simple and direct -->
+                <h3>Support This Free Tool</h3>
+                <p>If this tool helped you, please consider sending a small tip to keep it running and free for everyone.</p>
+                <p><strong>Litecoin (LTC) Address:</strong></p>
                 <p class="wallet-address">ltc1qjxywuv2as72k24q6xw378ejwt8jpzsqyr7lhdv</p>
+                <img src="ltc-qr.png" alt="Litecoin QR Code" style="width: 150px; margin-top: 15px; border-radius: 10px;">
             </div>
         </footer>
     </div>
+    
     <script src="script.js"></script>
-         <script>
-             window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
-         </script>
+
+    <!-- Vercel Analytics (Keep this here) -->
+    <script>
+      window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+    </script>
     <script src="/_vercel/insights/script.js" defer></script>
 </body>
 </html>

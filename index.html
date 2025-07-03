@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Message Weaver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Message Weaver ⚡</h1>
+            <p>Craft the perfect message from the future.</p>
+        </header>
+
+        <main>
+            <form id="ai-form">
+                <div class="form-group">
+                    <label for="message-type">1. Select Mission Profile:</label>
+                    <select id="message-type" name="message-type">
+                        <option value="complain">Complaint Protocol</option>
+                        <option value="refund">Asset Recovery Request</option>
+                        <option value="job-inquiry">Career Opportunity Scan</option>
+                        <option value="apology">Diplomatic Apology</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">2. Input Key Datapoints:</label>
+                    <textarea id="details" name="details" placeholder="e.g., Product: 'Cybernetic Mouse', Order: 987-XYZ, Issue: Arrived with a cracked chassis."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tone">3. Set Communication Tone:</label>
+                    <select id="tone" name="tone">
+                        <option value="polite">Polite</option>
+                        <option value="firm">Firm & Direct</option>
+                        <option value="friendly">Friendly</option>
+                        <option value="formal">Formal & Official</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="generate-btn">ENGAGE AI</button>
+            </form>
+
+            <div id="result-container">
+                <h2>Transmission Received:</h2>
+                <div id="loading" class="hidden">CALCULATING RESPONSE... STAND BY...</div>
+                <div id="result-text"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="tip-jar">
+                <h3>Support the Uplink</h3>
+                <p>If this tool aided your mission, consider a small contribution to keep the signal strong and improving this wonderful application.</p>
+                <p><strong>LTC Network Address:</strong></p>
+                <p class="wallet-address">ltc1qjxywuv2as72k24q6xw378ejwt8jpzsqyr7lhdv</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
